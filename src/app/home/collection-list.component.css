@@ -1,0 +1,48 @@
+.kanban-form {
+    margin: 3% 10% 0% 10%;
+    text-align: center;
+    padding: 1%;
+}
+
+label {
+    margin: 1%;
+}
+
+button {
+    margin: 1%;
+}
+
+.tarefa {
+    height: 120px;
+    width: 120px;
+    background-color: rgb(255, 210, 77);
+    margin: 3px;
+    float: left;
+}
+
+.kanban-coluna {
+    float: left;
+    text-align: center;
+    position: relative;
+    width: 23%;
+    margin: 1%;
+}
+
+.task-name {
+    text-align: center;
+    margin: 2%;
+}
+
+.task-time {
+    text-align: right;
+    margin: 5%;
+}
+
+.task-id {
+    text-align: right;
+    margin: 5%;
+}
+
+.kanban-done {
+    border-right: none;
+}

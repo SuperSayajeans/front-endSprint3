@@ -28,18 +28,25 @@ button {
     margin: 1%;
 }
 
-.task-name {
+.task-description {
     text-align: center;
     margin: 2%;
 }
 
-.task-time {
+.task-hours {
     text-align: right;
     margin: 5%;
 }
 
-.task-id {
+.task-tracking {
     text-align: right;
+    float: right;
+    margin: 5%;
+}
+
+.task-id {
+    text-align: left;
+    float: left;
     margin: 5%;
 }
 

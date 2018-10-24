@@ -1,0 +1,32 @@
+<h1>Projects fetching</h1>
+
+<p>This component demonstrates fetching projects data from the server. As well as changing the active project.</p>
+
+<p *ngIf="!projects"><em>Loading...</em></p>
+
+<table class='table' *ngIf="projects">
+  <thead>
+    <tr>
+      <th>Project Id</th>
+      <th>Name</th>
+      <th>Master Id</th>
+      <th>PO Id</th>
+      <th>Begin Time</th>
+      <th>End Time</th>
+      <th># of members</th>
+      <th>Change Active</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects, index as i">
+      <td>{{ project.projectId }}</td>
+      <td>{{ project.name }}</td>
+      <td>{{ project.master }}</td>
+      <td>{{ project.po }}</td>
+      <td>{{ project.beginTime }}</td>
+      <td>{{ project.endTime }}</td>
+      <td>{{ project.nOfMembers }}</td>
+      <td> <button type="button" (click)="changeActiveProject(i)">Activate</button> </td>
+    </tr>
+  </tbody>
+</table>

@@ -6,29 +6,16 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './fetch-data.component.html'
 })
 export class FetchDataComponent {
-  public forecasts: Object;
+  public tasks: Object;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     var url = "http://localhost:54380/api/tasks";
-    var xhr = new XMLHttpRequest()
-    var tasks;
-    xhr.open('GET', url, true);
-    console.log(xhr.responseText);
-    xhr.onload = function () {
-      tasks = JSON.parse(xhr.responseText);
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        console.table(tasks);
-      } else {
-        console.error(tasks);
-      }
-    }
+    var xhr = new XMLHttpRequest();
+    var response;
+    xhr.open('GET', url, false);
     xhr.send(null);
+    response = JSON.parse(xhr.responseText);
+    this.tasks = response;
+    console.table(this.tasks);
   }
-}
-
-interface WeatherForecast {
-  dateFormatted: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
 }

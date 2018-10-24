@@ -1,41 +1,46 @@
 <section class="kanban-form">
   <label>Tarefa:</label>
-  <input type="text" (keydown.enter)="add()" [(ngModel)]="item.name">
+  <input type="text" (keydown.enter)="add()" [(ngModel)]="item.description">
   <label>Horas:</label>
-  <input type="text" (keydown.enter)="add()" [(ngModel)]="item.time">
+  <input type="text" (keydown.enter)="add()" [(ngModel)]="item.hours">
   <label>Rastreio:</label>
-  <input type="text" (keydown.enter)="add()" [(ngModel)]="item.id">
-  <button type="button" (click)="add()">ADD</button>
+  <input type="text" (keydown.enter)="add()" [(ngModel)]="item.tracking">
+  <button class="btn btn-default" type="button" (click)="add()">ADD</button>
+  <button class="btn btn-default" (click)="remove()">REMOVE</button>
 </section>
 <section class="kanban-coluna kanban-backlog">
   <h1>BACKLOG</h1>
   <div class="tarefa" *ngFor="let item of backlog, index as i" (click)="shiftToInProgress(i)">
-    <h3 class="task-name">{{item.name}}</h3>
-    <h4 class="task-time">{{item.time}} Horas</h4>
-    <h5 class="task-id">#{{item.id}}</h5>
+    <h3 class="task-description">{{item.description}}</h3>
+    <h4 class="task-hours">{{item.hours}} Horas</h4>
+    <h5 class="task-tracking">#{{item.tracking}}</h5>
+    <h5 class="task-id">Id: {{item.taskId}}</h5>
   </div>
 </section>
 <section class="kanban-coluna kanban-inProgress">
   <h1>In Progress</h1>
-  <div class="tarefa" *ngFor="let item of inProgress, index as i" (click)="shiftToBlocked(i)">
-    <h3 class="task-name">{{item.name}}</h3>
-    <h4 class="task-time">{{item.time}} Horas</h4>
-    <h5 class="task-id">#{{item.id}}</h5>
+  <div class="tarefa" *ngFor="let item of inProgress, index as i" (click)="shiftToDone(i)">
+    <h3 class="task-description">{{item.description}}</h3>
+    <h4 class="task-hours">{{item.hours}} Horas</h4>
+    <h5 class="task-tracking">#{{item.tracking}}</h5>
+    <h5 class="task-id">Id: {{item.taskId}}</h5>
   </div>
 </section>
 <section class="kanban-coluna kanban-inBlocked">
   <h1>Blocked</h1>
-  <div class="tarefa" *ngFor="let item of blocked, index as i" (click)="shiftToDone(i)">
-    <h3 class="task-name">{{item.name}}</h3>
-    <h4 class="task-time">{{item.time}} Horas</h4>
-    <h5 class="task-id">#{{item.id}}</h5>
+  <div class="tarefa" *ngFor="let item of blocked, index as i" (click)="shiftToBacklog(i)">
+    <h3 class="task-description">{{item.description}}</h3>
+    <h4 class="task-hours">{{item.hours}} Horas</h4>
+    <h5 class="task-tracking">#{{item.tracking}}</h5>
+    <h5 class="task-id">Id: {{item.taskId}}</h5>
   </div>
 </section>
 <section class="kanban-coluna kanban-done">
   <h1>Done</h1>
   <div class="tarefa" *ngFor="let item of done, index as i">
-    <h3 class="task-name">{{item.name}}</h3>
-    <h4 class="task-time">{{item.time}} Horas</h4>
-    <h5 class="task-id">#{{item.id}}</h5>
+    <h3 class="task-description">{{item.description}}</h3>
+    <h4 class="task-hours">{{item.hours}} Horas</h4>
+    <h5 class="task-tracking">#{{item.tracking}}</h5>
+    <h5 class="task-id">Id: {{item.taskId}}</h5>
   </div>
 </section>

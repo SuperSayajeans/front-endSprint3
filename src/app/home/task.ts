@@ -1,6 +1,7 @@
 export class Task {
-    name: string;
-    time: number;
+    description: string;
+    hours: number;
     id: number;
     owner: string;
+    tracking: number;
 }

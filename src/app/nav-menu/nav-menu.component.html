@@ -14,14 +14,19 @@
             <ul class='nav navbar-nav'>
                 <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
                     <a [routerLink]='["/"]' (click)='collapse()'>
-                        <span class='glyphicon glyphicon-home'></span> Home
+                        <span class='glyphicon glyphicon-home'></span> Kanban
                     </a>
                 </li>
                 <li [routerLinkActive]='["link-active"]'>
                     <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
-                        <span class='glyphicon glyphicon-th-list'></span> Fetch data
+                        <span class='glyphicon glyphicon-th-list'></span> Tasks
                     </a>
                 </li>
+                <li [routerLinkActive]='["link-active"]'>
+                        <a [routerLink]='["/projects"]' (click)='collapse()'>
+                            <span class='glyphicon glyphicon-th-list'></span> Projects
+                        </a>
+                    </li>
             </ul>
         </div>
     </div>
